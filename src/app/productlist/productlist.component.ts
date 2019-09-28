@@ -15,14 +15,17 @@ export class ProductlistComponent implements OnInit {
   aryProducts:Array<IProduct>;
   aryCategories:Array<ICategory>;
   aryCategorySelection:Array<ICategory> = CATEGORYLIST;
+  selectedCategory:number;
 
   constructor(private prodService:ProductService) { }
 
   ngOnInit() {
     this.aryProducts = this.prodService.getProducts();
+    this.selectedCategory = 0;
   }
 
   categorySelected(val:ICategory) {
+    this.selectedCategory = val.categoryID;
     let filteredProducts = this.prodService.getFilteredProducts(val);
     this.aryProducts = filteredProducts;
     this.isProductsEmpty = (this.aryProducts.length <= 0 || this.aryProducts == null);

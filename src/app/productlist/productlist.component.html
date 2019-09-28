@@ -3,7 +3,7 @@
 <section>
     <div class="category-link" *ngIf="aryCategorySelection && aryCategorySelection.length">
       <div *ngFor="let categorySelection of aryCategorySelection">
-        <button class="button button-category" (click)="categorySelected(categorySelection)">{{categorySelection.category}}</button>
+        <button class="button button-category" (click)="categorySelected(categorySelection)" [class.selected]="categorySelection.categoryID == selectedCategory">{{categorySelection.category}}</button>
       </div>
     </div>
     <div class="products">
