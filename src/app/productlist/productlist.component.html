@@ -1,0 +1,29 @@
+<h2 class="page-title">Product List</h2>
+
+<section>
+    <div class="category-link" *ngIf="aryCategorySelection && aryCategorySelection.length">
+      <div *ngFor="let categorySelection of aryCategorySelection">
+        <button class="button button-category" (click)="categorySelected(categorySelection)">{{categorySelection.category}}</button>
+      </div>
+    </div>
+    <div class="products">
+        <ul class="product-label">
+            <li>Product Name</li>
+            <li>Description</li>
+        </ul>
+
+        <div *ngIf="isProductsEmpty" class="no-results">
+          <h5>- No Results Found -</h5>
+        </div>
+
+        <div *ngIf="aryProducts && aryProducts.length">
+            <ul *ngFor="let product of aryProducts; let i=index">
+                <li><a [routerLink]="['/productdetail', product.id]">{{product.title}}</a></li>
+                <li>
+                  <p>{{product.description}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+

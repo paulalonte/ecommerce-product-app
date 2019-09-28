@@ -1,0 +1,22 @@
+<h2 class="page-title">Product Details</h2>
+
+<div *ngIf="product" class="product-detail">
+
+    <h2 class="detail-title">{{product.title}}</h2>
+
+    <div>
+        <label>About this product:</label>
+        <p>{{product.description}}</p>
+    </div>
+
+    <div>
+        <label>Categories:</label>
+        <p *ngFor="let category of product.categories">{{category.category}}</p>
+    </div>
+
+    <div>
+        <label>Product SKU:</label>
+        <p>{{product.sku}}</p>
+    </div>
+</div>
+

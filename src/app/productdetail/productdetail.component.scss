@@ -1,0 +1,21 @@
+$margin: 15px;
+
+.product-detail {
+    .detail-title {
+        margin-bottom: $margin;
+    }
+
+    div {
+        margin-bottom: $margin;
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #999;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+}

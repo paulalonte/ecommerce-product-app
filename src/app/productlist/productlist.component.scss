@@ -1,0 +1,43 @@
+section {
+    display: flex;
+    display: -webkit-flex;
+
+    div {
+        &.products {
+            width: 50%;
+
+            ul {
+                list-style-type: none;
+                display: flex;
+
+                &.product-label {
+                    font-weight: bold;
+                }
+
+                &:nth-child(even) {
+                    background: #eee;
+                }
+
+                li {
+                    flex-basis: 40%;
+                    padding: 10px;
+                }
+            }
+        }
+
+        &.category-link {
+            padding: 10px;
+            border-right: 1px solid #eee;
+            margin-right: 20px;
+
+            div {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.no-results {
+    padding: 10px;
+}
+

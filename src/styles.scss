@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: 'Tahoma', sans-serif;
+}
+
+%button {
+    border-radius: 0;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.button {
+    @extend %button;
+}
+
+.button-lg {
+    @extend %button;
+    font-size: 1.1rem;
+    padding: 10px 22px;
+}
+
+.button-default {
+    background: #ff6358;
+    color: white;
+    transition: background 0.5s ease;
+
+    &:hover {
+        background: darken(#ff6358, 20%);
+    }
+}
+
+.button-category {
+    width: 120px;
+    text-align: center;
+    transition: background 0.5s ease;
+
+    &:hover {
+        background: #eee;
+    }
+}
+
+.page-title {
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.selected {
+    background: #eee;
+}

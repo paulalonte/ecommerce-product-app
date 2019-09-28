@@ -1,0 +1,52 @@
+<h2 class="page-title">Add Product Form</h2>
+
+<form #addForm="ngForm" [formGroup]="formGroup" novalidate (ngSubmit)="save(addForm)">
+  <div class="form-group">
+    <div>
+      <label for="title">Product Title</label>
+      <input id="title" type="text" formControlName="title">
+    </div>
+
+    <div>
+      <label for="desc">Product Description</label>
+      <input id="desc" type="text" formControlName="desc">
+    </div>
+
+    <div>
+      <label for="sku">SKU</label>
+      <input id="sku" type="text" formControlName="sku">
+    </div>
+
+    <div>
+      <label>Categories:</label>
+      <kendo-multiselect [data]="aryCategories" formControlName="aryCategoryValues" [(ngModel)]="aryCategoryValues" [valuePrimitive]="false" textField="category" valueField="categoryID"></kendo-multiselect>
+    </div>
+
+    <!--error message-->
+    <div *ngIf="formGroup.controls['title'].invalid && (formGroup.controls['title'].dirty || formGroup.controls['title'].touched)" class="error">
+        <p *ngIf="formGroup.controls['title'].errors.required">
+            Name/Title of Product is required
+        </p>
+        <p *ngIf="formGroup.controls['title'].errors.minlength" class="error">
+            Name should have a minimum of 10 characters
+        </p>
+    </div>
+  
+    <div *ngIf="formGroup.controls['sku'].invalid && (formGroup.controls['sku'].dirty || formGroup.controls['sku'].touched)" class="error">
+        <p *ngIf="formGroup.controls['sku'].errors.required">
+            SKU is required
+        </p>
+    </div>
+
+    <div *ngIf="formGroup.controls['aryCategoryValues'].invalid && (formGroup.controls['aryCategoryValues'].dirty || formGroup.controls['aryCategoryValues'].touched)" class="error">
+        <p *ngIf="formGroup.controls['aryCategoryValues'].errors.required">
+            Category is required
+        </p>
+    </div>
+
+    <button type="submit" [disabled]="formGroup.pristine || formGroup.invalid" class="button-lg button-default button-submit" [class.disabled]="formGroup.pristine || formGroup.invalid">Save</button>
+  </div>
+</form>
+
+<!-- <button (click)=getProducts() class="button button-default">Get Products</button> -->
+
