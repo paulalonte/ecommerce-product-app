@@ -3,7 +3,7 @@
 <form #addForm="ngForm" [formGroup]="formGroup" novalidate (ngSubmit)="save(addForm)">
   <div class="form-group">
     <div>
-      <label for="title">Product Title</label>
+      <label for="title">Product Title<span class="required">Required</span></label>
       <input id="title" type="text" formControlName="title">
     </div>
 
@@ -13,12 +13,12 @@
     </div>
 
     <div>
-      <label for="sku">SKU</label>
+      <label for="sku">SKU<span class="required">Required</span></label>
       <input id="sku" type="text" formControlName="sku">
     </div>
 
     <div>
-      <label>Categories:</label>
+      <label>Categories:<span class="required">Required</span></label>
       <kendo-multiselect [data]="aryCategories" formControlName="aryCategoryValues" [(ngModel)]="aryCategoryValues" [valuePrimitive]="false" textField="category" valueField="categoryID"></kendo-multiselect>
     </div>
 

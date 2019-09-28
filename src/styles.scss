@@ -54,3 +54,10 @@ html, body {
 .selected {
     background: #eee;
 }
+
+span.required {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.6rem;
+    color: #999;
+}
