@@ -11,6 +11,7 @@ import { IProduct } from '../productlist/model/product';
 export class ProductDetailComponent implements OnInit {
 
   product:IProduct;
+  pageHeaderTitle:string = 'Product Detail';
 
   constructor(private prodService:ProductService, private route: ActivatedRoute) { }
 

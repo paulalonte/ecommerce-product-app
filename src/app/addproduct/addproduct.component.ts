@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from '../productlist/model/product';
 import { ProductService } from '../productlist/service/product.service';
@@ -15,6 +15,7 @@ export class AddProductComponent implements OnInit {
   formGroup: FormGroup;
   allCategoryID:number = 0;
   isAllCategory:boolean;
+  pageHeaderTitle:string = 'Add Product Form';
 
   constructor(private fb:FormBuilder, private prodService:ProductService) { 
     this.createForm();

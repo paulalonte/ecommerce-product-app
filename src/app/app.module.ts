@@ -11,6 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductDetailComponent } from './productdetail/productdetail.component';
 import { AddProductComponent } from './addproduct/addproduct.component';
+import { PageheaderComponent } from './pageheader/pageheader.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddProductComponent } from './addproduct/addproduct.component';
     NavComponent,
     ProductlistComponent,
     ProductDetailComponent,
-    AddProductComponent
+    AddProductComponent,
+    PageheaderComponent
   ],
   imports: [
     BrowserModule,

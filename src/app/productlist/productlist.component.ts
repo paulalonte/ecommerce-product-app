@@ -16,6 +16,7 @@ export class ProductlistComponent implements OnInit {
   aryCategories:Array<ICategory>;
   aryCategorySelection:Array<ICategory> = CATEGORYLIST;
   selectedCategory:number;
+  pageHeaderTitle:string = 'Product List';
 
   constructor(private prodService:ProductService) { }
 
